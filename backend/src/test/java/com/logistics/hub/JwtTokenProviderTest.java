@@ -7,6 +7,8 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import java.security.SecureRandom;
+import java.util.Base64;
 import java.util.Collections;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -16,19 +18,18 @@ class JwtTokenProviderTest {
     private JwtTokenProvider jwtTokenProvider;
     private UserDetails userDetails;
 
-    // A valid Base64-encoded HMAC-SHA256 key (at least 256 bits)
-    // "3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b" is hex.
-    // Let's use a standard base64 key or decode hex. Wait, in JwtTokenProvider:
-    // Decoders.BASE64.decode(jwtSecret);
-    // So the secret in app.jwt.secret MUST be Base64 encoded.
-    // Let's generate/use a valid base64 key of 256 bits or more:
-    // e.g., "dGhpcy1pcy1hLXNlY3JldC1rZXktZm9yLWp3dC10b2tlbi1nZW5lcmF0aW9uLWluLW91ci1hcHA="
-    private final String base64Secret = "dGhpcy1pcy1hLXNlY3JldC1rZXktZm9yLWp3dC10b2tlbi1nZW5lcmF0aW9uLWluLW91ci1hcHA=";
+    /** Randomly generated per test run — never stored in source control. */
+    private String testBase64Secret;
 
     @BeforeEach
     void setUp() {
+        // Generate a fresh 256-bit (32-byte) random secret for every test run
+        byte[] keyBytes = new byte[32];
+        new SecureRandom().nextBytes(keyBytes);
+        testBase64Secret = Base64.getEncoder().encodeToString(keyBytes);
+
         jwtTokenProvider = new JwtTokenProvider();
-        ReflectionTestUtils.setField(jwtTokenProvider, "jwtSecret", base64Secret);
+        ReflectionTestUtils.setField(jwtTokenProvider, "jwtSecret", testBase64Secret);
         ReflectionTestUtils.setField(jwtTokenProvider, "jwtExpirationMs", 3600000L); // 1 hour
 
         userDetails = new User("testadmin", "password", Collections.emptyList());
@@ -64,7 +65,7 @@ class JwtTokenProviderTest {
     void validateToken_expiredToken_returnsFalse() {
         // Create token provider with 0ms expiration
         JwtTokenProvider expiredProvider = new JwtTokenProvider();
-        ReflectionTestUtils.setField(expiredProvider, "jwtSecret", base64Secret);
+        ReflectionTestUtils.setField(expiredProvider, "jwtSecret", testBase64Secret);
         ReflectionTestUtils.setField(expiredProvider, "jwtExpirationMs", -1000L); // expired 1s ago
 
         String token = expiredProvider.generateToken(userDetails);
