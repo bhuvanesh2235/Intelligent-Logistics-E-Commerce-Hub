@@ -1,0 +1,11 @@
+{
+  "task": "shipments",
+  "metrics": {
+    "MAE": 4.5652,
+    "RMSE": 6.1714,
+    "MAPE": 18.5818,
+    "R2": -0.0277
+  },
+  "test_samples": 143,
+  "model_path": "models\\lstm_shipments.keras"
+}

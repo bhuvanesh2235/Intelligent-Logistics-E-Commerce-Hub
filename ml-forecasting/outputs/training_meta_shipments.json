@@ -1,0 +1,17 @@
+{
+  "task": "shipments",
+  "epochs_trained": 30,
+  "final_train_loss": 0.014161,
+  "final_val_loss": 0.015016,
+  "final_train_mae": 0.095,
+  "final_val_mae": 0.097,
+  "training_time_s": 19.61,
+  "hyperparams": {
+    "lstm_units_1": 128,
+    "lstm_units_2": 64,
+    "dropout": 0.2,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "lookback": 30
+  }
+}

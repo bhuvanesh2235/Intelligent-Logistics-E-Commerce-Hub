@@ -1,0 +1,15 @@
+{
+  "name": "playwright-tests",
+  "version": "1.0.0",
+  "description": "E2E checkout tests for Logistics Hub using Playwright",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "show-report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.44.0"
+  }
+}

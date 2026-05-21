@@ -1,0 +1,184 @@
+# ══════════════════════════════════════════════════════════════════
+#   Intelligent Logistics & E-Commerce Hub — Production Docker Compose
+#   Services: mysql | backend | frontend | forecasting-api | cnn-api
+# ══════════════════════════════════════════════════════════════════
+
+services:
+
+  # ── MySQL Database ──────────────────────────────────────────────
+  mysql:
+    image: mysql:8.2
+    container_name: logistics_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-root}
+      MYSQL_DATABASE: logistics_hub
+    ports:
+      - "3307:3306"   # host:container — avoids conflict with local mysqld
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - logistics_net
+
+  # ── Spring Boot Backend ─────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: logistics_backend
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/logistics_hub?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD:-root}
+      JWT_SECRET: ${JWT_SECRET:-3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b}
+      JWT_EXPIRATION_MS: 86400000
+      CORS_ORIGINS: http://localhost:3000,http://frontend:80
+      FORECAST_API_URL: http://forecasting-api:5001
+      DAMAGE_API_URL:   http://cnn-api:5002
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/actuator/health | grep -q UP || exit 1"]
+      interval: 15s
+      timeout: 8s
+      retries: 5
+      start_period: 30s
+    networks:
+      - logistics_net
+
+  # ── React Frontend (Nginx) ──────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: logistics_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - logistics_net
+
+  # ── LSTM Forecasting API (Module 2) ────────────────────────────
+  forecasting-api:
+    build:
+      context: ./ml-forecasting
+      dockerfile: Dockerfile
+    container_name: logistics_forecasting
+    restart: unless-stopped
+    environment:
+      FLASK_HOST: 0.0.0.0
+      FLASK_PORT: 5001
+      FLASK_DEBUG: "false"
+      FORECAST_HORIZON: 7
+      LOOKBACK_DAYS: 30
+      EPOCHS: 60
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./ml-forecasting/models:/app/models
+      - ./ml-forecasting/outputs:/app/outputs
+      - ./ml-forecasting/data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 20s
+      timeout: 8s
+      retries: 5
+    networks:
+      - logistics_net
+
+  # ── CNN Damage Detection API (Module 3) ────────────────────────
+  cnn-api:
+    build:
+      context: ./ml-damage-detection
+      dockerfile: Dockerfile
+    container_name: logistics_cnn
+    restart: unless-stopped
+    environment:
+      FLASK_HOST: 0.0.0.0
+      FLASK_PORT: 5002
+      FLASK_DEBUG: "false"
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./ml-damage-detection/models:/app/models
+      - ./ml-damage-detection/outputs:/app/outputs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+      interval: 20s
+      timeout: 8s
+      retries: 5
+    networks:
+      - logistics_net
+
+  # ── Java Console CLI Inventory Tool (On-Demand Profile) ──────────
+  inventory-cli:
+    build:
+      context: ./inventory-cli
+      dockerfile: Dockerfile
+    container_name: logistics_inventory_cli
+    profiles:
+      - tools
+    network_mode: "host"
+    stdin_open: true
+    tty: true
+
+  # ── Selenium Admin UI Tests (On-Demand Profile) ──────────────────
+  backend-tests:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: builder
+    container_name: logistics_backend_tests
+    profiles:
+      - test
+    entrypoint: ["mvn", "test"]
+
+  selenium-tests:
+    build:
+      context: ./selenium-tests
+      dockerfile: Dockerfile
+    container_name: logistics_selenium_tests
+    profiles:
+      - test
+    depends_on:
+      frontend:
+        condition: service_started
+      backend:
+        condition: service_healthy
+    network_mode: "host"
+
+  # ── Playwright Customer E2E Tests (On-Demand Profile) ──────────────
+  playwright-tests:
+    build:
+      context: ./playwright-tests
+      dockerfile: Dockerfile
+    container_name: logistics_playwright_tests
+    profiles:
+      - test
+    depends_on:
+      frontend:
+        condition: service_started
+      backend:
+        condition: service_healthy
+    network_mode: "host"
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  logistics_net:
+    driver: bridge
+    name: logistics_network

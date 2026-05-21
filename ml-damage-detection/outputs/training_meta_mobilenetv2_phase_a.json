@@ -1,0 +1,11 @@
+{
+  "model_name": "MobileNetV2 Phase A",
+  "epochs_trained": 30,
+  "final_train_loss": 0.5693,
+  "final_val_loss": 0.5959,
+  "final_train_acc": 0.7179,
+  "final_val_acc": 0.6333,
+  "best_val_acc": 0.6667,
+  "training_time_s": 513.43,
+  "model_path": "models\\cnn_mobilenetv2_phase_a.keras"
+}

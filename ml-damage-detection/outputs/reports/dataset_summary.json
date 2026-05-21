@@ -1,0 +1,32 @@
+{
+  "module": "Module 3 - CNN Damage Detection",
+  "dataset": "christianvorhemus/industrial-quality-control-of-packages",
+  "image_size": "224x224",
+  "train_split": 0.7,
+  "val_split": 0.15,
+  "test_split": 0.15,
+  "class_totals": {
+    "damaged": 400,
+    "non_damaged": 400
+  },
+  "split_counts": {
+    "classes": {
+      "damaged": {
+        "train": 280,
+        "val": 60,
+        "test": 60
+      },
+      "non_damaged": {
+        "train": 280,
+        "val": 60,
+        "test": 60
+      }
+    },
+    "total": {
+      "train": 560,
+      "val": 120,
+      "test": 120,
+      "skipped": 0
+    }
+  }
+}

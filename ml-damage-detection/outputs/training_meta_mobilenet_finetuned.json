@@ -1,0 +1,10 @@
+{
+  "tag": "mobilenet_finetuned",
+  "epochs": 18,
+  "best_val_acc": 0.6667,
+  "final_val_loss": 0.74517,
+  "final_val_acc": 0.55,
+  "best_val_auc": 0.7292,
+  "training_time": 497.57,
+  "model_path": "models\\cnn_mobilenet_finetuned.keras"
+}

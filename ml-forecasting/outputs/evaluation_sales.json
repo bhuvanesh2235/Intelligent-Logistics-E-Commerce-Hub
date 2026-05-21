@@ -1,0 +1,11 @@
+{
+  "task": "sales",
+  "metrics": {
+    "MAE": 4.2132,
+    "RMSE": 5.4136,
+    "MAPE": 13.1421,
+    "R2": 0.0016
+  },
+  "test_samples": 143,
+  "model_path": "models\\lstm_sales.keras"
+}

@@ -1,0 +1,488 @@
+{
+  "total": 60,
+  "damaged": 42,
+  "non_damaged": 18,
+  "damage_rate": 0.7,
+  "predictions": [
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4695,
+      "class_index": 0,
+      "damage_prob": 0.4695,
+      "inference_ms": 1202.4,
+      "image_path": "data/test/damaged\\damaged_test_00000.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.0455,
+      "class_index": 1,
+      "damage_prob": 0.9545,
+      "inference_ms": 97.1,
+      "image_path": "data/test/damaged\\damaged_test_00001.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.3552,
+      "class_index": 0,
+      "damage_prob": 0.3552,
+      "inference_ms": 96.8,
+      "image_path": "data/test/damaged\\damaged_test_00002.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.495,
+      "class_index": 0,
+      "damage_prob": 0.495,
+      "inference_ms": 103.6,
+      "image_path": "data/test/damaged\\damaged_test_00003.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.3891,
+      "class_index": 1,
+      "damage_prob": 0.6109,
+      "inference_ms": 98.1,
+      "image_path": "data/test/damaged\\damaged_test_00004.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.0335,
+      "class_index": 1,
+      "damage_prob": 0.9665,
+      "inference_ms": 103.8,
+      "image_path": "data/test/damaged\\damaged_test_00005.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.2111,
+      "class_index": 1,
+      "damage_prob": 0.7889,
+      "inference_ms": 145.3,
+      "image_path": "data/test/damaged\\damaged_test_00006.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4738,
+      "class_index": 1,
+      "damage_prob": 0.5262,
+      "inference_ms": 83.4,
+      "image_path": "data/test/damaged\\damaged_test_00007.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4345,
+      "class_index": 1,
+      "damage_prob": 0.5655,
+      "inference_ms": 89.0,
+      "image_path": "data/test/damaged\\damaged_test_00008.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.3928,
+      "class_index": 1,
+      "damage_prob": 0.6072,
+      "inference_ms": 104.5,
+      "image_path": "data/test/damaged\\damaged_test_00009.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4867,
+      "class_index": 1,
+      "damage_prob": 0.5133,
+      "inference_ms": 88.8,
+      "image_path": "data/test/damaged\\damaged_test_00010.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4818,
+      "class_index": 0,
+      "damage_prob": 0.4818,
+      "inference_ms": 97.2,
+      "image_path": "data/test/damaged\\damaged_test_00011.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.2435,
+      "class_index": 1,
+      "damage_prob": 0.7565,
+      "inference_ms": 95.1,
+      "image_path": "data/test/damaged\\damaged_test_00012.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4029,
+      "class_index": 1,
+      "damage_prob": 0.5971,
+      "inference_ms": 93.8,
+      "image_path": "data/test/damaged\\damaged_test_00013.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4968,
+      "class_index": 0,
+      "damage_prob": 0.4968,
+      "inference_ms": 96.2,
+      "image_path": "data/test/damaged\\damaged_test_00014.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4241,
+      "class_index": 1,
+      "damage_prob": 0.5759,
+      "inference_ms": 93.9,
+      "image_path": "data/test/damaged\\damaged_test_00015.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.3958,
+      "class_index": 0,
+      "damage_prob": 0.3958,
+      "inference_ms": 89.5,
+      "image_path": "data/test/damaged\\damaged_test_00016.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4786,
+      "class_index": 1,
+      "damage_prob": 0.5214,
+      "inference_ms": 92.2,
+      "image_path": "data/test/damaged\\damaged_test_00017.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4361,
+      "class_index": 0,
+      "damage_prob": 0.4361,
+      "inference_ms": 88.0,
+      "image_path": "data/test/damaged\\damaged_test_00018.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.3814,
+      "class_index": 0,
+      "damage_prob": 0.3814,
+      "inference_ms": 99.7,
+      "image_path": "data/test/damaged\\damaged_test_00019.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4775,
+      "class_index": 1,
+      "damage_prob": 0.5225,
+      "inference_ms": 93.5,
+      "image_path": "data/test/damaged\\damaged_test_00020.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4633,
+      "class_index": 1,
+      "damage_prob": 0.5367,
+      "inference_ms": 96.6,
+      "image_path": "data/test/damaged\\damaged_test_00021.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4041,
+      "class_index": 1,
+      "damage_prob": 0.5959,
+      "inference_ms": 94.8,
+      "image_path": "data/test/damaged\\damaged_test_00022.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.1515,
+      "class_index": 1,
+      "damage_prob": 0.8485,
+      "inference_ms": 93.0,
+      "image_path": "data/test/damaged\\damaged_test_00023.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4595,
+      "class_index": 1,
+      "damage_prob": 0.5405,
+      "inference_ms": 128.8,
+      "image_path": "data/test/damaged\\damaged_test_00024.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4218,
+      "class_index": 1,
+      "damage_prob": 0.5782,
+      "inference_ms": 87.5,
+      "image_path": "data/test/damaged\\damaged_test_00025.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4549,
+      "class_index": 1,
+      "damage_prob": 0.5451,
+      "inference_ms": 93.5,
+      "image_path": "data/test/damaged\\damaged_test_00026.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.1894,
+      "class_index": 1,
+      "damage_prob": 0.8106,
+      "inference_ms": 104.4,
+      "image_path": "data/test/damaged\\damaged_test_00027.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4719,
+      "class_index": 0,
+      "damage_prob": 0.4719,
+      "inference_ms": 97.0,
+      "image_path": "data/test/damaged\\damaged_test_00028.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.1831,
+      "class_index": 1,
+      "damage_prob": 0.8169,
+      "inference_ms": 93.4,
+      "image_path": "data/test/damaged\\damaged_test_00029.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.384,
+      "class_index": 1,
+      "damage_prob": 0.616,
+      "inference_ms": 96.6,
+      "image_path": "data/test/damaged\\damaged_test_00030.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4227,
+      "class_index": 1,
+      "damage_prob": 0.5773,
+      "inference_ms": 93.7,
+      "image_path": "data/test/damaged\\damaged_test_00031.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.3664,
+      "class_index": 0,
+      "damage_prob": 0.3664,
+      "inference_ms": 92.5,
+      "image_path": "data/test/damaged\\damaged_test_00032.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4855,
+      "class_index": 1,
+      "damage_prob": 0.5145,
+      "inference_ms": 96.5,
+      "image_path": "data/test/damaged\\damaged_test_00033.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4549,
+      "class_index": 1,
+      "damage_prob": 0.5451,
+      "inference_ms": 95.8,
+      "image_path": "data/test/damaged\\damaged_test_00034.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4409,
+      "class_index": 0,
+      "damage_prob": 0.4409,
+      "inference_ms": 91.5,
+      "image_path": "data/test/damaged\\damaged_test_00035.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.3549,
+      "class_index": 1,
+      "damage_prob": 0.6451,
+      "inference_ms": 91.6,
+      "image_path": "data/test/damaged\\damaged_test_00036.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.453,
+      "class_index": 1,
+      "damage_prob": 0.547,
+      "inference_ms": 94.8,
+      "image_path": "data/test/damaged\\damaged_test_00037.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.2793,
+      "class_index": 1,
+      "damage_prob": 0.7207,
+      "inference_ms": 91.0,
+      "image_path": "data/test/damaged\\damaged_test_00038.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4984,
+      "class_index": 1,
+      "damage_prob": 0.5016,
+      "inference_ms": 94.7,
+      "image_path": "data/test/damaged\\damaged_test_00039.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4931,
+      "class_index": 0,
+      "damage_prob": 0.4931,
+      "inference_ms": 95.2,
+      "image_path": "data/test/damaged\\damaged_test_00040.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.2466,
+      "class_index": 1,
+      "damage_prob": 0.7534,
+      "inference_ms": 86.4,
+      "image_path": "data/test/damaged\\damaged_test_00041.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.0953,
+      "class_index": 1,
+      "damage_prob": 0.9047,
+      "inference_ms": 86.8,
+      "image_path": "data/test/damaged\\damaged_test_00042.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4335,
+      "class_index": 1,
+      "damage_prob": 0.5665,
+      "inference_ms": 93.4,
+      "image_path": "data/test/damaged\\damaged_test_00043.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4335,
+      "class_index": 1,
+      "damage_prob": 0.5665,
+      "inference_ms": 88.2,
+      "image_path": "data/test/damaged\\damaged_test_00044.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.46,
+      "class_index": 1,
+      "damage_prob": 0.54,
+      "inference_ms": 95.0,
+      "image_path": "data/test/damaged\\damaged_test_00045.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.1952,
+      "class_index": 1,
+      "damage_prob": 0.8048,
+      "inference_ms": 91.8,
+      "image_path": "data/test/damaged\\damaged_test_00046.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4361,
+      "class_index": 0,
+      "damage_prob": 0.4361,
+      "inference_ms": 87.8,
+      "image_path": "data/test/damaged\\damaged_test_00047.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4481,
+      "class_index": 1,
+      "damage_prob": 0.5519,
+      "inference_ms": 96.0,
+      "image_path": "data/test/damaged\\damaged_test_00048.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4892,
+      "class_index": 0,
+      "damage_prob": 0.4892,
+      "inference_ms": 99.6,
+      "image_path": "data/test/damaged\\damaged_test_00049.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.3577,
+      "class_index": 0,
+      "damage_prob": 0.3577,
+      "inference_ms": 91.9,
+      "image_path": "data/test/damaged\\damaged_test_00050.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4639,
+      "class_index": 0,
+      "damage_prob": 0.4639,
+      "inference_ms": 97.2,
+      "image_path": "data/test/damaged\\damaged_test_00051.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.3503,
+      "class_index": 1,
+      "damage_prob": 0.6497,
+      "inference_ms": 93.8,
+      "image_path": "data/test/damaged\\damaged_test_00052.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.4735,
+      "class_index": 1,
+      "damage_prob": 0.5265,
+      "inference_ms": 99.4,
+      "image_path": "data/test/damaged\\damaged_test_00053.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.3831,
+      "class_index": 1,
+      "damage_prob": 0.6169,
+      "inference_ms": 104.6,
+      "image_path": "data/test/damaged\\damaged_test_00054.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.3859,
+      "class_index": 1,
+      "damage_prob": 0.6141,
+      "inference_ms": 96.2,
+      "image_path": "data/test/damaged\\damaged_test_00055.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4289,
+      "class_index": 0,
+      "damage_prob": 0.4289,
+      "inference_ms": 89.6,
+      "image_path": "data/test/damaged\\damaged_test_00056.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.3747,
+      "class_index": 1,
+      "damage_prob": 0.6253,
+      "inference_ms": 110.5,
+      "image_path": "data/test/damaged\\damaged_test_00057.jpg"
+    },
+    {
+      "prediction": "Non Damaged",
+      "confidence": 0.2724,
+      "class_index": 1,
+      "damage_prob": 0.7276,
+      "inference_ms": 98.0,
+      "image_path": "data/test/damaged\\damaged_test_00058.jpg"
+    },
+    {
+      "prediction": "Damaged",
+      "confidence": 0.4667,
+      "class_index": 0,
+      "damage_prob": 0.4667,
+      "inference_ms": 99.2,
+      "image_path": "data/test/damaged\\damaged_test_00059.jpg"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "tag": "custom_cnn",
+  "epochs": 9,
+  "best_val_acc": 0.5,
+  "final_val_loss": 0.82107,
+  "final_val_acc": 0.5,
+  "best_val_auc": 0.5667,
+  "training_time": 301.19,
+  "model_path": "models\\cnn_custom_cnn.keras"
+}

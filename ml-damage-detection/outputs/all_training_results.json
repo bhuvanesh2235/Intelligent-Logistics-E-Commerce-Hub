@@ -1,0 +1,32 @@
+{
+  "custom_cnn": {
+    "tag": "custom_cnn",
+    "epochs": 10,
+    "best_val_acc": 0.5167,
+    "final_val_loss": 0.76506,
+    "final_val_acc": 0.5167,
+    "best_val_auc": 0.5428,
+    "training_time": 293.75,
+    "model_path": "models\\cnn_custom_cnn.keras"
+  },
+  "mobilenet_phase_a": {
+    "tag": "mobilenet_phase_a",
+    "epochs": 13,
+    "best_val_acc": 0.6667,
+    "final_val_loss": 0.73988,
+    "final_val_acc": 0.5583,
+    "best_val_auc": 0.7104,
+    "training_time": 279.63,
+    "model_path": "models\\cnn_mobilenet_phase_a.keras"
+  },
+  "mobilenet_finetuned": {
+    "tag": "mobilenet_finetuned",
+    "epochs": 18,
+    "best_val_acc": 0.6667,
+    "final_val_loss": 0.74517,
+    "final_val_acc": 0.55,
+    "best_val_auc": 0.7292,
+    "training_time": 497.57,
+    "model_path": "models\\cnn_mobilenet_finetuned.keras"
+  }
+}
