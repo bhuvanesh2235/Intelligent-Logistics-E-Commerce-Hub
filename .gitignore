@@ -46,5 +46,5 @@ playwright-report/
 test-results/
 playwright/.cache/
 
-# Runtime screenshots
-screenshots/
+# Test credentials — regenerate locally; never commit secrets here
+backend/src/test/resources/application-test.properties
