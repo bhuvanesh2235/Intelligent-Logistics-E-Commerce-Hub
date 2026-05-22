@@ -398,7 +398,7 @@ docker-compose run inventory-cli
 
 ## Screenshots
 
-> Screenshots are saved to `screenshots/` after first run.
+> Screenshots are saved to [`screenshots/`](https://github.com/bhuvanesh2235/Intelligent-Logistics-E-Commerce-Hub/tree/main/screenshots) after first run.
 
 | Screen | Description |
 |---|---|
